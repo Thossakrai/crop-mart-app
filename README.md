@@ -18,7 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 ------------
 ## Things that need to be done
 
-- ทำ Hero Widget จากหน้า Home ไป ProductPage (เดี๋ยวผมทำเอง)
+- ทำ Hero Widget จากหน้า Home ไป ProductPage (เดี๋ยวผมทำเอง) ✅ DONE **
 - เอา Photo ลง Storage แล้วเชื่อมให้แต่ละ ListView ไปดึงรูปมา
 - ทำ Add to cart อาจจะเก็บ เป็น doc แยกว่า user ตนนี้กด add to cart อะไรไปเท่าไหร่ ใจจริงจะทำเป็น doc ของ user ที่มี list ของ ชื่อ ที่อยู่ cart ไว้ในนั้น 
 

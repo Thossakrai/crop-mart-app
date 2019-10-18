@@ -7,6 +7,7 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("recieve id = " + id);
     return Scaffold(
       appBar: AppBar(
         title: Text("Product Page"),

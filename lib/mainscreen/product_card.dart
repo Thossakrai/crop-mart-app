@@ -24,6 +24,7 @@ class ProductCardState extends State<ProductCard> {
     return Center(
       child: GestureDetector(
         onTap: () {
+          print("widget id = ${widget.id}");
           Navigator.push(
               context,
               MaterialPageRoute(

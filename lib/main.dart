@@ -76,7 +76,6 @@ class MyHomePageState extends State<MyHomePage> {
 
 class PlaceholderWidget extends StatelessWidget {
   final Color color;
-
   PlaceholderWidget(this.color);
 
   @override
@@ -147,7 +146,7 @@ class HomePage extends StatelessWidget {
                     )),
                 Container(
                   height: 220,
-                  child: _buildCatList('crops'),
+                  child: _buildCatList('fruits'),
                 )
               ]),
         ],
