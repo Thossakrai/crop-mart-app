@@ -32,18 +32,18 @@ class ProductPage extends StatelessWidget {
           var document = snapshot.data;
           return Container(
               child: Column(children: <Widget>[
-            Hero(
-              tag: 'product_picture' + id,
-              child: _buildImage(document['imageUrl']),
-            ),
+            // Hero(
+            //   tag: 'product_picture' + document.documentID,
+            //   child: _buildImage(document['imageUrl']),
+            // ),
             Container(
               padding: EdgeInsets.all(10.0),
               child: Column(
                 children: <Widget>[
-                  // Hero(
-                  //   tag: 'product_picture' + id,
-                  //   child: _buildImage(document['imageUrl']),
-                  // ),
+                  Hero(
+                    tag: 'product_picture_' + document.documentID,
+                    child: _buildImage(document['imageUrl']),
+                  ),
                   Container(
                     padding: EdgeInsets.all(10.0),
                     child: Column(

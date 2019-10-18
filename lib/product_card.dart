@@ -52,7 +52,7 @@ class ProductCardState extends State<ProductCard> {
           height: 200,
           width: 200,
           padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
-          margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+          margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -60,7 +60,7 @@ class ProductCardState extends State<ProductCard> {
           child: Column(
             children: <Widget>[
               Hero(
-                tag: 'product_picture' + widget.id,
+                tag: 'product_picture_' + widget.id,
                 // TODO add image
                 child: _buildImage(widget.imagePath),
               ),
