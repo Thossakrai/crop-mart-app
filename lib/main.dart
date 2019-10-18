@@ -48,9 +48,9 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
+      appBar: AppBar(
         backgroundColor: appColor,
-        title: new Text(
+        title: Text(
           "CROP MART",
           style: TextStyle(color: Colors.black),
         ),
@@ -62,12 +62,11 @@ class MyHomePageState extends State<MyHomePage> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("HOME")),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.home), title: new Text("HOME")),
+              icon: Icon(Icons.shopping_cart), title: Text("CART")),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.shopping_cart), title: new Text("CART")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: new Text("PROFILE"))
+              icon: Icon(Icons.person), title: Text("PROFILE"))
         ],
       ),
     );

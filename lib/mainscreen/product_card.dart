@@ -4,15 +4,9 @@ import '../product_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductCard extends StatefulWidget {
-  ProductCard(
-      {Key key,
-      this.id,
-      this.productName})
-      : super(key: key);
- String productName;
-String id;
-//  final int price;
-
+  ProductCard({Key key, this.id, this.productName}) : super(key: key);
+  String productName;
+  String id;
 
   @override
   State<StatefulWidget> createState() {
@@ -21,7 +15,6 @@ String id;
 }
 
 class ProductCardState extends State<ProductCard> {
-  print(wid)
   @override
   Widget build(BuildContext context) {
     return Center(
