@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import './cart.dart';
-// import './main_firebase.dart';
-import './mainscreen/product_card.dart';
+import './product_card.dart';
 
 void main() => runApp(MyApp());
 
@@ -105,6 +104,8 @@ class HomePage extends StatelessWidget {
                     productName: document['productName'],
                     qty: document['qty'],
                     price: document['price'],
+                    imagePath: document['imageUrl'],
+                    collection: collection,
                   );
                 }).toList(),
               );

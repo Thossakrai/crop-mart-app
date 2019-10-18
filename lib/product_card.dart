@@ -1,22 +1,23 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../product_page.dart';
+import './product_page.dart';
 
 class ProductCard extends StatefulWidget {
-  ProductCard(
-      {Key key,
-      this.id,
-      this.productName,
-      this.qty,
-      this.price,
-      this.imagePath})
-      : super(key: key);
+  ProductCard({
+    Key key,
+    this.id,
+    this.productName,
+    this.qty,
+    this.price,
+    this.imagePath,
+    this.collection,
+  }) : super(key: key);
 
-  String productName;
-  String id;
-  int qty;
-  int price;
-  String imagePath;
+  final String productName;
+  final String id;
+  final int qty;
+  final int price;
+  final String imagePath;
+  final String collection;
 
   @override
   State<StatefulWidget> createState() {
@@ -44,6 +45,7 @@ class ProductCardState extends State<ProductCard> {
                   builder: (context) => ProductPage(
                         id: widget.id,
                         productName: widget.productName,
+                        collection: widget.collection,
                       )));
         },
         child: Container(
@@ -58,7 +60,8 @@ class ProductCardState extends State<ProductCard> {
           child: Column(
             children: <Widget>[
               Hero(
-                tag: 'product_picture${widget.id}',
+                tag: 'product_picture' + widget.id,
+                // TODO add image
                 child: _buildImage(widget.imagePath),
               ),
               Column(children: <Widget>[
