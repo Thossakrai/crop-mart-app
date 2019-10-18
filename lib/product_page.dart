@@ -10,7 +10,7 @@ class ProductPage extends StatelessWidget {
     print("recieve id = " + id);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Page"),
+        title: Text("${productName.toUpperCase()}"),
       ),
       body: Container(
         child: Column(
@@ -25,7 +25,6 @@ class ProductPage extends StatelessWidget {
                 children: <Widget>[
                   Text("Product Name"),
                   Text("Price"),
-                  Text("Description"),
                   Text("Qty")
                 ],
               ),
