@@ -1,36 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductPage extends StatelessWidget {
-  ProductPage({Key key, @required this.productid}) : super(key: key);
-  final String productid;
+  ProductPage({Key key, this.id, this.productName}) : super(key: key);
+  String id;
+  String productName;
 
   @override
   Widget build(BuildContext context) {
+    print("recieve id = " + id);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Page"),
+        title: Text("${productName.toUpperCase()}"),
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Hero(
-              tag: 'product_picture' + this.productid,
-              child: Image.asset('images/gettyimages-580833893.jpg'),
-            ),
-            Container(
-              padding: EdgeInsets.all(10.0),
+      body: StreamBuilder(
+          stream:
+              Firestore.instance.collection('records').document(id).snapshots(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return new Text("Loading");
+            }
+            var document = snapshot.data;
+            return Container(
               child: Column(
                 children: <Widget>[
-                  Text("Product Name"),
-                  Text("Price"),
-                  Text("Description"),
-                  Text("Qty")
+                  Hero(
+                    tag: 'product_picture' + id,
+                    child: Image.asset('images/gettyimages-580833893.jpg'),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text(document['productName']),
+                        Text(Int.parse()),
+                        Text("Qty")
+                      ],
+                    ),
+                  )
                 ],
               ),
-            )
-          ],
-        ),
-      ),
+            );
+          }),
       floatingActionButton: new FloatingActionButton(
         // TODO ProductPage: set onPressed Action
         onPressed: null,
@@ -42,5 +53,4 @@ class ProductPage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
-
 }

@@ -1,12 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../product_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductCard extends StatefulWidget {
-  ProductCard({Key key, this.id, this.productName}) : super(key: key);
+  ProductCard(
+      {Key key,
+      this.id,
+      this.productName,
+      this.qty,
+      this.price,
+      this.imagePath})
+      : super(key: key);
+
   String productName;
   String id;
+  int qty;
+  int price;
+  String imagePath;
 
   @override
   State<StatefulWidget> createState() {
@@ -15,16 +25,25 @@ class ProductCard extends StatefulWidget {
 }
 
 class ProductCardState extends State<ProductCard> {
+  Widget _buildImage(String imageFromInternet) {
+    if (imageFromInternet != null) {
+      return Image.network(imageFromInternet, fit: BoxFit.contain);
+    }
+    return Image.asset('images/gettyimages-580833893.jpg', fit: BoxFit.contain);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
       child: GestureDetector(
         onTap: () {
+          // print("widget id = ${widget.id}");
           Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => ProductPage(
-                        productid: widget.productName,
+                        id: widget.id,
+                        productName: widget.productName,
                       )));
         },
         child: Container(
@@ -39,8 +58,8 @@ class ProductCardState extends State<ProductCard> {
           child: Column(
             children: <Widget>[
               Hero(
-                tag: 'product_picture' + widget.productName,
-                child: Image.asset('images/gettyimages-580833893.jpg'),
+                tag: 'product_picture${widget.id}',
+                child: _buildImage(widget.imagePath),
               ),
               Column(children: <Widget>[
                 Text(
@@ -49,8 +68,8 @@ class ProductCardState extends State<ProductCard> {
                 ),
                 Row(
                   children: <Widget>[
-                    // Expanded(child: Text(widget.document['qty'].toString())),
-                    // Expanded(child: Text(widget.document['price'].toString()))
+                    Expanded(child: Text('${widget.qty.toString()} Pcs. left')),
+                    Expanded(child: Text('${widget.price.toString()} Baht'))
                   ],
                 )
               ]),
@@ -59,14 +78,5 @@ class ProductCardState extends State<ProductCard> {
         ),
       ),
     );
-  }
-
-  void doNothing() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ProductPage(
-                  productid: '1',
-                )));
   }
 }

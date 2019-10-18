@@ -31,7 +31,13 @@ class _CartItemState extends State<CartItem> {
       child: Container(
           padding: EdgeInsets.all(10),
           height: MediaQuery.of(context).size.height * 0.15,
-          decoration: BoxDecoration(color: Colors.lightGreenAccent),
+          decoration: BoxDecoration(
+            color: Colors.grey[300],
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(color: Colors.grey[400], offset: Offset(2, 2))
+            ],
+          ),
           child: Row(
             children: <Widget>[
               CircleAvatar(
@@ -63,7 +69,9 @@ class _CartItemState extends State<CartItem> {
                       },
                     ),
                   ),
-                  Text(_quantity.toString() + " pcs"),
+                  Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      child: Text(_quantity.toString() + " pcs")),
                   Container(
                     height: 30,
                     width: 30,

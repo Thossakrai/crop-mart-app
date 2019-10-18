@@ -55,7 +55,7 @@ class MyHomePageState extends State<MyHomePage> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: HomePage(),
+      body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
         backgroundColor: appColor,
@@ -75,7 +75,6 @@ class MyHomePageState extends State<MyHomePage> {
 
 class PlaceholderWidget extends StatelessWidget {
   final Color color;
-
   PlaceholderWidget(this.color);
 
   @override
@@ -104,6 +103,8 @@ class HomePage extends StatelessWidget {
                   return ProductCard(
                     id: document.documentID,
                     productName: document['productName'],
+                    qty: document['qty'],
+                    price: document['price'],
                   );
                 }).toList(),
               );
@@ -146,7 +147,7 @@ class HomePage extends StatelessWidget {
                     )),
                 Container(
                   height: 220,
-                  child: _buildCatList('crops'),
+                  child: _buildCatList('fruits'),
                 )
               ]),
         ],
