@@ -104,6 +104,8 @@ class HomePage extends StatelessWidget {
                   return ProductCard(
                     id: document.documentID,
                     productName: document['productName'],
+                    qty: document['qty'],
+                    price: document['price'],
                   );
                 }).toList(),
               );

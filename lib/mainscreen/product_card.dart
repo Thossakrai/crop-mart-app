@@ -4,9 +4,12 @@ import '../product_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductCard extends StatefulWidget {
-  ProductCard({Key key, this.id, this.productName}) : super(key: key);
+  ProductCard({Key key, this.id, this.productName, this.qty, this.price})
+      : super(key: key);
   String productName;
   String id;
+  int qty;
+  int price;
 
 //  final int price;
 
@@ -28,8 +31,7 @@ class ProductCardState extends State<ProductCard> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) =>
-                      ProductPage(
+                  builder: (context) => ProductPage(
                         id: widget.id,
                         productName: widget.productName,
                       )));
@@ -56,8 +58,8 @@ class ProductCardState extends State<ProductCard> {
                 ),
                 Row(
                   children: <Widget>[
-                    // Expanded(child: Text(widget.document['qty'].toString())),
-                    // Expanded(child: Text(widget.document['price'].toString()))
+                    Expanded(child: Text('${widget.qty.toString()} Pcs. left')),
+                    Expanded(child: Text('${widget.price.toString()} Baht'))
                   ],
                 )
               ]),
