@@ -21,7 +21,8 @@ String id;
 }
 
 class ProductCardState extends State<ProductCard> {
-  print(wid)
+//  print(wid)
+
   @override
   Widget build(BuildContext context) {
     return Center(
