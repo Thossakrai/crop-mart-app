@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
-  ProductPage({Key key, @required this.productid}) : super(key: key);
-  final String productid;
+  ProductPage({Key key,  this.id, this.productName}) : super(key: key);
+  String productName;
+  String id;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class ProductPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Hero(
-              tag: 'product_picture' + this.productid,
+              tag: 'product_picture' + id,
               child: Image.asset('images/gettyimages-580833893.jpg'),
             ),
             Container(

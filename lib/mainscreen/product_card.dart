@@ -4,15 +4,11 @@ import '../product_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductCard extends StatefulWidget {
-  ProductCard(
-      {Key key,
-      this.id,
-      this.productName})
-      : super(key: key);
- String productName;
-String id;
-//  final int price;
+  ProductCard({Key key, this.id, this.productName}) : super(key: key);
+  String productName;
+  String id;
 
+//  final int price;
 
   @override
   State<StatefulWidget> createState() {
@@ -31,8 +27,10 @@ class ProductCardState extends State<ProductCard> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => ProductPage(
-                        productid: widget.productName,
+                  builder: (context) =>
+                      ProductPage(
+                        id: widget.id,
+                        productName: widget.productName,
                       )));
         },
         child: Container(
@@ -47,7 +45,7 @@ class ProductCardState extends State<ProductCard> {
           child: Column(
             children: <Widget>[
               Hero(
-                tag: 'product_picture' + widget.productName,
+                tag: 'product_picture' + widget.id,
                 child: Image.asset('images/gettyimages-580833893.jpg'),
               ),
               Column(children: <Widget>[
@@ -69,12 +67,12 @@ class ProductCardState extends State<ProductCard> {
     );
   }
 
-  void doNothing() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ProductPage(
-                  productid: '1',
-                )));
-  }
+//  void doNothing() {
+//    Navigator.push(
+//        context,
+//        MaterialPageRoute(
+//            builder: (context) => ProductPage(
+//                  productName: '1',
+//                )));
+
 }
