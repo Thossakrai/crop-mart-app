@@ -59,12 +59,7 @@ class MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
         backgroundColor: appColor,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-          print("current index = " + _currentIndex.toString());
-        },
+        onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
