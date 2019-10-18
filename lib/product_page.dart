@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class ProductPage extends StatelessWidget {
   ProductPage({Key key,  this.id, this.productName, this.photoUrl}) : super(key: key);

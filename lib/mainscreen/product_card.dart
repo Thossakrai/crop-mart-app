@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../product_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 class ProductCard extends StatefulWidget {
@@ -42,7 +41,7 @@ class ProductCard extends StatefulWidget {
     return url;
   }
 
-//  final int price;
+
 
   @override
   State<StatefulWidget> createState() {
