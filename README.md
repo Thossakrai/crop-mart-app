@@ -25,3 +25,4 @@ samples, guidance on mobile development, and a full API reference.
 เท่าที่นึกออกครับ 4.44 PM
 
 - Route ไปที่ Tab อื่นได้ ✅ DONE **
+- Cart Page เมื่อกดเพิ่มสินค้า/ลด ให้อัพเดตใน Firestore และเมื่อกดลดจนเหลือ 0 ให้ขึ้นหน้า Alert คอนเฟิร์มว่าลบออกจาก cart นะ จากนั้นอัพเดตใน firestore 
