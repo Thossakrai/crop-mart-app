@@ -27,7 +27,7 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 10, left: 10, top: 10),
+      padding: EdgeInsets.only(right: 10.0, left: 10.0, top: 10.0),
       child: Container(
           padding: EdgeInsets.all(10),
           height: MediaQuery.of(context).size.height * 0.15,

@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import './cart.dart';
-// import './main_firebase.dart';
-import './mainscreen/product_card.dart';
+import './product_card.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,9 +47,9 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
+      appBar: AppBar(
         backgroundColor: appColor,
-        title: new Text(
+        title: Text(
           "CROP MART",
           style: TextStyle(color: Colors.black),
         ),
@@ -62,12 +61,11 @@ class MyHomePageState extends State<MyHomePage> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("HOME")),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.home), title: new Text("HOME")),
+              icon: Icon(Icons.shopping_cart), title: Text("CART")),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.shopping_cart), title: new Text("CART")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: new Text("PROFILE"))
+              icon: Icon(Icons.person), title: Text("PROFILE"))
         ],
       ),
     );
@@ -106,6 +104,8 @@ class HomePage extends StatelessWidget {
                     productName: document['productName'],
                     qty: document['qty'],
                     price: document['price'],
+                    imagePath: document['imageUrl'],
+                    collection: collection,
                   );
                 }).toList(),
               );
