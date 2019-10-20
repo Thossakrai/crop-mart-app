@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "849852850550",
+    "firebase_url": "https://seworkshop-895a0.firebaseio.com",
+    "project_id": "seworkshop-895a0",
+    "storage_bucket": "seworkshop-895a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849852850550:android:0d05a88cc5633f62689a57",
+        "android_client_info": {
+          "package_name": "com.example.seworkshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849852850550-aru4av1kra9sttbn8p46cjcsvqtje4mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2198K0fIbZthsjjWhdDndA9-jHT_UG6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849852850550-aru4av1kra9sttbn8p46cjcsvqtje4mh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "849852850550-iv2sqfhse4lme67k9v4m6vtct03moqpc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seworkshop"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
