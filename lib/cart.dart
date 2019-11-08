@@ -17,10 +17,10 @@ class CartPage extends StatelessWidget {
 
 class CartItem extends StatefulWidget {
   @override
-  _CartItemState createState() => _CartItemState();
+  CartItemState createState() => CartItemState();
 }
 
-class _CartItemState extends State<CartItem> {
+class CartItemState extends State<CartItem> {
   final String productName = "Cornstarch";
   int _quantity = 1;
 
