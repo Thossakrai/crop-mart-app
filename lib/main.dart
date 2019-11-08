@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import './cart.dart';
-import './product_card.dart';
+import 'cart.dart';
+import 'product_card.dart';
 
 void main() => runApp(MyApp());
 
